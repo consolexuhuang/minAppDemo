@@ -1,0 +1,5 @@
+<!--pages/writeStep/in de x.wxml-->
+
+<text wx:if='{{domShowText}}' class="write {{isShowLight ? 'writeAfter' : ''}} ">    {{domShowText}}</text>
+
+<!-- <view class="write2" wx:if='{{domShowText2}}'>{{domShowText2}}</view> -->

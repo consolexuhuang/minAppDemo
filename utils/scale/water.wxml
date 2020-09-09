@@ -1,0 +1,15 @@
+<!-- <template name="we-cropper">
+    <canvas
+            canvas-id="{{id}}">
+            <image src='{{logoSrc}}' class='img'></image>
+            <image 
+                src='https://img.cdn.powerpower.net/5d416646e4b0e3fd6800a785.png'
+              class='logo'
+              bindtouchstart="touchStart"
+              bindtouchmove="touchMove"
+              bindtouchend="touchEnd"
+              style="width:{{width}}px;height:{{height}}px;top:"
+              ></image>
+    </canvas>
+    
+</template> -->

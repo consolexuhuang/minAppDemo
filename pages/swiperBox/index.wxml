@@ -1,0 +1,19 @@
+<!--pages/swiperBox/index.wxml-->
+<swiper 
+  vertical
+  easing-function='easeOutCubic'
+  duration='1000'
+  bindchange='bindchange'
+>
+   <swiper-item class='item item1' > 
+      <view class="cont contAnimate delay1">是伟大的味道酸酸的</view>
+
+      <view class="cont2 contAnimate delay12">是伟大的味道是伟大的味道酸酸的酸酸的</view>
+   </swiper-item>
+   <swiper-item class='item item2'>
+      <view class="cont {{current == 1 ? (isDownLoad ? 'contAnimate delay04' : 'contAnimateOutDowm') : 'contAnimateDowm'}}">是伟大的味是伟大的味道酸酸的是伟大的味道酸酸的是伟大的味</view>
+   </swiper-item>
+   <swiper-item class='item item3'>
+      <view  class="cont {{current == 2 ? (isDownLoad ? 'contAnimate delay04' : 'contAnimateOutDowm') : 'contAnimateDowm'}}">是伟大的味道酸酸的</view>
+   </swiper-item>
+</swiper>

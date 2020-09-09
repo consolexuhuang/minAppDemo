@@ -1,0 +1,335 @@
+/* pages/progress/progress.wxss */
+page{
+  /* display: flex;
+  align-items: center;justify-content: center; */
+}
+.progressBox{
+   /* display: flex */
+   /* margin: 50% auto;
+   padding: 0 20rpx; */
+}
+
+/* ----------------------------------------- */
+.progressCompBg{
+  background: #eee;
+  position: relative;
+  border-radius: 40rpx;
+  width: 600rpx;
+  margin: 50% auto 0;
+  height: 40rpx;
+}
+.progressCompBg2{ 
+  border-radius: 40rpx;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.progressComp{
+  /* width: 100%; */
+  overflow: hidden;
+  height: 100%;
+  border-radius: 40rpx;
+  background: #896eff;
+  background-image: linear-gradient(45deg, 
+                                  rgba(255, 255, 255, 0.15) 25%, 
+                                    transparent 25%, 
+                                    transparent 50%, 
+                                    rgba(255, 255, 255, 0.15) 50%, 
+                                    rgba(255, 255, 255, 0.15) 75%, 
+                                    transparent 75%, 
+                                    transparent);
+  background-size: 40rpx 40rpx;
+  animation: progress-bar-stripes 1.5s linear infinite , animate-positive 1.5s cubic-bezier(0.62, 0, 0.88, 0.2) 1s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+.logo{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top: -70rpx;
+  animation: bounceInUp .8s linear, animate-left 1.5s cubic-bezier(0.62, 0, 0.88, 0.2) 1s;
+  animation-fill-mode: forwards;
+}
+.loadIng{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60rpx;
+  margin: 0 auto;
+  color: #896eff;
+  font-size: 24rpx;
+  text-align: center;
+  letter-spacing: 4rpx;
+}
+.loadItem_l{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite
+}
+.loadItem_o{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite .2s
+}
+.loadItem_a{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite .4s
+}
+.loadItem_d{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite .6s
+}
+
+.loadItem_i{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite .8s
+}
+.loadItem_n{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite 1s
+}
+.loadItem_g{
+  display: inline-block;
+  animation: loadingUp 2.8s linear infinite 1.2s
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 80rpx 0;
+  }
+ 
+  to {
+	  background-position: 0 0;
+  }
+}
+@keyframes animate-positive{
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* logo出场动画  运动动画*/
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.455, 1);
+  }
+
+  0% {
+    transform: translate3d(0, -20rpx, 0);
+  }
+
+  60% {
+    transform: translate3d(0, -10rpx, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10rpx, 0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translate3d(0, -5rpx, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0rpx, 0);
+  }
+}
+
+@keyframes animate-left{
+  0% { 
+    left: 0; 
+    transform: rotate(0)
+  }
+  /* 50%{
+     transform: rotate(360deg)
+  } */
+  100% { 
+    left: 540rpx; 
+    transform: rotate(360deg)
+  }
+}
+
+/* loading加载动画 */
+@keyframes loadingUp{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+/* @keyframes loadingUp_o{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+@keyframes loadingUp_a{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+@keyframes loadingUp_d{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+@keyframes loadingUp_i{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+@keyframes loadingUp_n{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+@keyframes loadingUp_g{
+  0% {
+    transform: translateY(0);
+    opacity: 1
+  }
+  30% {
+    transform: translateY(0);
+    opacity: .3
+  }
+  50% {
+    transform: translateY(-20rpx);
+    opacity: .8
+  }
+  70% {
+    transform: translateY(3rpx);
+    opacity: .8
+  }
+  85% {
+    transform: translateY(-3rpx);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+} */

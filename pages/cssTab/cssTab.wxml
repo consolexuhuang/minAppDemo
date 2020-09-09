@@ -1,0 +1,7 @@
+<!--pages/cssTab/cssTab.wxml-->
+<view class="tab">
+   <view class="tabItem {{index == 0 ? 'chooseItem' : ''}}" bindtap="clickItem" data-index="0">puls卡</view>
+   <view class="tabItem {{index == 1 ? 'chooseItem chooseItem2' : ''}}" bindtap="clickItem" data-index="1">次卡</view>
+   <view class="tabItem {{index == 2 ? 'chooseItem chooseItem3' : ''}}" bindtap="clickItem" data-index="2">训练营</view>
+   <view class="downLine"></view>
+</view>

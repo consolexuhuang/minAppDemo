@@ -1,0 +1,6 @@
+<!--pages/bluetooth/index.wxml-->
+<view class="list" wx:for='{{devicesList}}' wx:key='index'>
+   <view>name:{{item.name}},</view>
+   <view>设备id:{{item.deviceId}}</view>
+   <view class="btn" wx:if='{{deviceId == item.deviceId}}' bindtap="linkBlue">连接</view>
+</view>

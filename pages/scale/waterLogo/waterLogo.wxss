@@ -1,0 +1,91 @@
+/* pages/waterLogo/waterLogo.wxss */
+#canvas{
+  background: #fff;
+  margin: 0 auto;
+  width: 700rpx;
+  height: 600rpx;
+  position: relative;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+}
+.logo{
+  width: 200rpx;
+  height: 150rpx;
+  z-index: 100;
+  /* padding: 20rpx; */
+  border: 10rpx solid #ccc;
+}
+.logoBox{
+  width: 200rpx;
+  height: 150rpx;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+.scale{
+  right: -32rpx;
+  bottom: -32rpx;
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 4rpx solid #ccc;
+  text-align: center;
+  background: #fff;
+}
+.transform{
+  right: -32rpx;
+  top: -20rpx;
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 4rpx solid #ccc;
+  text-align: center;
+  background: #fff;
+}
+/**index.wxss**/
+.contentWarp{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: #d1e3f1;
+}
+.touchWrap{
+    transform-origin: center;
+    position: absolute;
+    z-index: 100;
+}
+
+.imgWrap {
+    box-sizing: border-box;
+    width: 100%;
+    transform-origin: center;
+    float: left;
+    border: 5rpx transparent dashed;
+}
+.imgWrap image {
+    float: left;
+}
+.active {
+    background-color: rgb(78, 114, 151);
+}
+
+.active view {
+    border: none;
+}
+.touchActive {
+    /* border: 4rpx #fff dashed; */
+    z-index: 400;
+}

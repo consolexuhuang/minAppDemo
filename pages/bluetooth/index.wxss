@@ -1,0 +1,12 @@
+/* pages/bluetooth/index.wxss */
+.list{
+  padding: 20rpx;
+  text-align: left;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  border-bottom: 2rpx solid #000;
+}
+.btn{
+  padding: 20rpx;
+  background: #f99
+}

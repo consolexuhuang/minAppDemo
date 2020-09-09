@@ -1,0 +1,12 @@
+<!--pages/home/index.wxml-->
+<view class="menu">
+   <!-- <view class="item" wx:for='{{itemNav}}' wx:key='index' bindtap="jumpScale" data-url="{{item.url}}">{{index+1}}. {{item.name}}</view> --> 
+   <block wx:for='{{itemNav}}' wx:key='index'>
+      <van-cell
+         is-link
+         title="{{index+1}}. {{item.name}}"
+         link-type="navigateTo"
+         url="{{item.url}}"
+         />
+   </block>
+</view>

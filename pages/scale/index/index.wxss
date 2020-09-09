@@ -1,0 +1,15 @@
+/**index.wxss**/
+page{
+  background: #ccc;
+}
+.canvas{
+  background: #fff;
+  width: 500rpx;
+  height: 500rpx;
+  margin: 100rpx auto 0
+}
+
+.cropper-buttons{
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #04b00f;
+}

@@ -1,0 +1,88 @@
+/* pages/cssEffect/index.wxss */
+.fold-1{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  position: relative;
+  width: 400rpx;
+  height: 160rpx;
+  border-radius: .5em;
+  color: #fff;
+  line-height: 160rpx;
+  text-align: center;
+  background: linear-gradient(-150deg,transparent 1.5em, #58a 0);
+}
+.fold-1::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to left bottom,transparent 50%,rgba(0,0,0,.2) 0,rgba(0,0,0,.4)) 100% 0 no-repeat;
+  width: 1.73em;
+  height: 3em;
+  transform: translateY(-1.3em) rotate(-30deg);
+  transform-origin: bottom right;
+  border-bottom-left-radius: inherit;
+  box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+}
+
+
+/* ------------------------ */
+.my-line{
+  line-height: 1.4em;
+  background: linear-gradient(gray,gray) no-repeat;
+  background-size: 100% 2rpx;
+  background-position: 0 1.2em;
+  text-shadow: .05em 0 #fff, -.05em 0 #fff;
+}
+
+/* ------------------------------- */
+.douyin{
+    animation: uk-text-shadow-glitch .65s cubic-bezier(1,-.91,0,1.79) 0s infinite normal both running;
+    margin-top: 20rpx;
+    font-size: 68rpx;
+    text-align: center;
+    background: rgb(150, 152, 253);
+    padding: 20rpx 0;
+    color: #fff
+}
+@keyframes uk-text-shadow-glitch {
+    0% {
+        text-shadow: none
+    }
+    25% {
+        text-shadow: -2rpx -2rpx 0 #ff0048,2rpx 2rpx 0 #3234ff
+    }
+    50% {
+        text-shadow: 2rpx -2rpx 0 #ff0048,-2rpx 2rpx 0 #3234ff
+    }
+    75% {
+        text-shadow: -2rpx 2rpx 0 #ff0048,2rpx -2rpx 0 #3234ff
+    }
+    100% {
+        text-shadow: 2rpx 2rpx 0 #ff0048,-2rpx -2rpx 0 #3234ff
+    }
+}
+@keyframes uk-flicker {
+    0% {
+        opacity: 0
+    }
+    10% {
+        opacity: .6;
+        transform: scale(.8)
+    }
+    20% {
+        opacity: 0
+    }
+    40% {
+        opacity: 1
+    }
+    50% {
+        opacity: .2;
+        transform: scale(1.1)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+}

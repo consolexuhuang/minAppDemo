@@ -1,0 +1,3 @@
+<!--pages/imgRgba/index.wxml-->
+<image src="https://img.cdn.powerpower.net/5df0bbb2e4b05795c0c8b63e.jpg" class="img"></image>
+<canvas canvas-id="canvasId"></canvas>
