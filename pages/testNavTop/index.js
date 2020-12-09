@@ -6,7 +6,7 @@ Page({
    */
   data: {
     customNavTopData:{
-      // navBg:'#3a7dd7',
+      navBg:'#3a7dd7',
       navIcon_color:'#000',
       navTitle_color:'#f99'
     }

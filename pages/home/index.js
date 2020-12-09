@@ -61,6 +61,10 @@ Page({
         url: '/pages/testNavTop/index',
         name: '测试自定义导航栏'
       },
+      {
+        url: '/pages/drivingAnimate/index',
+        name: '驱动动画'
+      },
     ]
   },
 

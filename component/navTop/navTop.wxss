@@ -1,5 +1,5 @@
 /* component/navTop/navTop.wxss */
-@import '/style/iconfont.wxss';
+@import '/public/iconfont.wxss';
 .custom_nav {
   width: 100%;
   position: relative;

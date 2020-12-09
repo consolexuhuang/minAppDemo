@@ -15,7 +15,8 @@
     "pages/observeChange/index",
     "pages/bluetooth/index",
     "pages/test/index",
-    "pages/testNavTop/index"
+    "pages/testNavTop/index",
+    "pages/drivingAnimate/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
