@@ -32,6 +32,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    systeminfo: false,   //系统信息
+    headerBtnPosi: false,  //头部菜单高度
   }
 })

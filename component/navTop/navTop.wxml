@@ -1,0 +1,35 @@
+<!--component/navTop/navTop.wxml-->
+<view class="custom_nav" style="height:{{navbarHeight}}px; background:{{customNavTopData.navBg}}">
+  <view class="custom_nav_box" style="height:{{navbarHeight}}px;">
+    <view class="custom_nav_bar" style="top:{{statusBarHeight}}px; height:{{cusnavH}}px;">
+
+      <!-- <block wx:if="{{isSearch}}">
+        <input class="navSearch"style="height:{{navbarBtn.height-2}}px;line-height:{{navbarBtn.height-4}}px; top:{{navbarBtn.top+1}}px; left:{{navbarBtn.right}}px; border-radius:{{navbarBtn.height/2}}px;" maxlength="10" bindinput="bindKeyInput" placeholder="输入文字搜索"/>
+      </block> -->
+      <block wx:if='{{isSlot}}'>
+         <view class="slotStyle" style="height:{{navbarBtn.height-2}}px;line-height:{{navbarBtn.height-4}}px; top:{{navbarBtn.top+1}}px; left:{{navbarBtn.right}}px;">
+             <slot></slot>
+         </view>
+      </block>
+
+      <block wx:else>
+        <view class="custom_nav_icon {{(haveBack && haveHome) && 'borderLine'}}" 
+              style="height:{{navbarBtn.height}}px;line-height:{{navbarBtn.height-2}}px; top:{{navbarBtn.top}}px; left:{{navbarBtn.right}}px; border-radius:{{navbarBtn.height/2}}px;">
+          <view wx:if="{{haveBack}}" class="icon-back" bindtap='_goBack'>
+            <text class="iconfont iconarrow-left back-pre" style="color:{{customNavTopData.navIcon_color}}"></text>
+          </view>
+          <view wx:if="{{haveBack && haveHome}}" class='navbar-v-line'></view>
+          <view class="icon-home" wx:if='{{haveHome}}'>
+            <navigator class="home_a" url="/pages/home/index" open-type="switchTab">
+              <text class="iconfont iconhome-fill back-home" style="color:{{customNavTopData.navIcon_color}}"></text>
+            </navigator>
+          </view>
+        </view>
+        <view wx:if='{{vTitle}}' class="nav_title" style="height:{{cusnavH}}px; line-height:{{cusnavH}}px; color:{{customNavTopData.navTitle_color}}">
+          {{vTitle}}
+        </view>
+      </block>
+
+    </view>
+  </view>
+</view>

@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import './public/animate.wxss';
+@import './public/iconfont.wxss';
 .container {
   position: absolute;
   top: 0;

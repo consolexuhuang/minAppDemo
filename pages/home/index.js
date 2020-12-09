@@ -57,6 +57,10 @@ Page({
         url: '/pages/test/index',
         name: '测试api'
       },
+      {
+        url: '/pages/testNavTop/index',
+        name: '测试自定义导航栏'
+      },
     ]
   },
 

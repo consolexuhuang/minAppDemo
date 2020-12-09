@@ -107,7 +107,7 @@ const wx_loginIn = (type, payload='') => {
       })
     }, fail_res => {
       console.log(fail_res)
-      // 若非强制授权 人口
+      //(拒绝授权) 若非强制授权 人口
       resolve( wx_loginIn() )
     })
 
