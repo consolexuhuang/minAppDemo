@@ -1,0 +1,45 @@
+/* pages/effect/observeChange/index.wxss */
+.topTab{
+  width: 100%;
+  height: 160rpx;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  line-height: 160rpx;
+  background:none;
+}
+.cont{
+  width: 100%;
+  background: #f99;
+  height: 500rpx;
+}
+.cont2{
+  background: #b00
+}
+.cont3{
+  background: #333
+}
+.changeTab{
+  animation: animateBg .8s ease;
+  animation-fill-mode: both;
+}
+.nonechangeTab{
+  animation: animateBgNone .8s ease;
+  animation-fill-mode: both;
+}
+@keyframes animateBg{
+  from{
+    background:none;
+  }
+  to{
+    background: #fff;
+  }
+}
+@keyframes animateBgNone{
+  from{
+    background: #fff;
+  }
+  to{
+    background:none;
+  }
+}

@@ -1,0 +1,27 @@
+<!--pages/effect/progress/progress.wxml-->
+<!-- <view class="progressBox">
+    <progress 
+          percent="100"
+          show-info
+          border-radius="40"
+          activeColor="#896eff"
+          backgroundColor='#eee'
+          active
+          stroke-width="20"
+    />
+</view> -->
+<view class="progressCompBg">
+  <view class="progressCompBg2">
+    <view class="progressComp"></view>
+    <image src="/images/logo.png" class="logo"></image>
+    <view class="loadIng">
+        <text class="loadItem_l">l</text>
+        <text class="loadItem_o">o</text>
+        <text class="loadItem_a">a</text>
+        <text class="loadItem_d">d</text>
+        <text class="loadItem_i">i</text>
+        <text class="loadItem_n">n</text>
+        <text class="loadItem_g">g</text>
+    </view>
+  </view>
+</view>

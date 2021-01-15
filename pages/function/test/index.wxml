@@ -1,0 +1,4 @@
+<!--pages/function/test/index.wxml-->
+<input bindinput='bindinput' style='background:#ccc'></input>
+<button open-type='getUserInfo' bindgetuserinfo = 'bindgetuserinfo' class='getUserInfoBtn'>登录</button>
+<button open-type='getUserInfo' open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber'>登录2</button>

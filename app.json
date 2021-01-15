@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/home/index"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/function",
+      "pages": [
+        "scale/waterLogo/waterLogo",
+        "scale/index/index",
+        "bluetooth/index",
+        "test/index",
+        "testNavTop/index"
+      ]
+    },
+    {
+      "root": "pages/effect",
+      "pages": [
+        "progress/progress",
+        "writeStep/index",
+        "getExistence/index",
+        "cssEffect/index",
+        "swiperBox/index",
+        "cssTab/cssTab",
+        "observeChange/index",
+        "drivingAnimate/index"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,32 @@
+<!--pages/waterLogo/waterLogo.wxml-->
+<!-- <import src="../../../utils/scale/canvas.wxml"/> -->
+<view class="cropper-wrapper">
+    <view id="canvas">
+        <image src='{{logoSrc}}' class='img'></image>
+        <!-- *************操作区域*************  -->
+        <block wx:for="{{itemList}}" wx:key="{{item.id}}">
+    <!-- 圆心坐标 <text style='position:absolute;top:{{item.y}}px;left:{{item.x}}px;width:2px;height:2px;background-color:yellow;z-index:500'></text> -->
+            <view class='touchWrap' style='transform: scale({{item.scale}});top:{{item.top}}px;left:{{item.left}}px; '>
+                <view class='imgWrap {{item.active? "touchActive":""}}' style="transform: rotate({{item.angle}}deg); border: {{item.active?4*item.oScale:0}}rpx #fff dashed;">
+                    <image src='{{item.image}}' data-id='{{item.id}}' style='width:{{item.width}}px;height:{{item.height}}px;' bindtouchstart='WraptouchStart'  bindtouchmove='WraptouchMove'></image>
+                    <text class='scale' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtap='deleteItem'>D</text>
+                    <text class='transform' style='transform: scale({{item.oScale}});transform-origin:center;' data-id='{{item.id}}' bindtouchstart='oTouchStart' bindtouchmove='oTouchMove' >SF</text>
+                </view>
+            </view>
+        </block>
+    <!-- **************操作区域************  -->
+    </view>
+    
+    <view class="cropper-buttons">
+        <view
+                class="getCropperImage"
+                bindtap="save">
+            确定
+        </view>
+        <view bindtap="save2">
+          保存
+        </view>
+    </view>
+    <canvas canvas-id='myCanvas' style="width:700rpx;height:600rpx;background:#F7F7F7;overflow:hidden;margin:0 auto"></canvas>
+</view>
+

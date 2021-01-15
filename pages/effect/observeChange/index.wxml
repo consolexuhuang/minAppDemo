@@ -1,0 +1,9 @@
+<!--pages/effect/observeChange/index.wxml-->
+<!-- <navigationBar
+    loading="{{loading}}" show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="头部" back="{{true}}"
+  /> -->
+<view class="topTab {{changeState ? 'changeTab' : (_observer ? 'nonechangeTab' : '')}}">头部</view>
+<view class="cont">212121</view>
+<view class="cont cont2 selectCont">555555</view>
+<view class="cont cont3">212121</view>
+<view class="cont cont2">212121</view>

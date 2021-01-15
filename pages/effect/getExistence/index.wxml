@@ -1,0 +1,6 @@
+<!--pages/effect/getExistence/index.wxml-->
+<view class="list" >标签：{{newCourseList.keyWord}} - {{newCourseList.describe}} - {{newCourseList.tagCount}}
+   <view wx:for='{{newCourseList.tagCourseList}}' wx:key='index'>
+     {{item.count}}
+   </view>
+</view>

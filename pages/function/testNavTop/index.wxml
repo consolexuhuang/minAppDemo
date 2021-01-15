@@ -1,0 +1,11 @@
+<!--pages/testNavTop/index.wxml-->
+<NavComponent v-title="自定义头部" 
+              bind:commonNavAttr="commonNavAttr" 
+              haveHome='{{true}}'
+              customNavTopData='{{customNavTopData}}'
+              isSlot='{{false}}'>
+      
+      <!-- <view>11</view> -->
+
+</NavComponent>
+<view>我是一个小行星</view>

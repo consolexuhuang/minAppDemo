@@ -1,0 +1,12 @@
+/* pages/home/index.wxss */
+.menu{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.item{
+  background: #eee;
+  border-bottom: 2rpx solid #333;
+  padding: 20rpx 60rpx;
+  box-sizing: border-box;
+}
