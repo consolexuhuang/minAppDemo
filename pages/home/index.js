@@ -57,6 +57,18 @@ Page({
         url: '/pages/function/sticky/sticky',
         name: '吸顶组件'
       },
+      {
+        url: '/pages/function/scrollList/scrollList',
+        name: '类似通讯滚动列表'
+      },
+      {
+        url: '/pages/function/htabs/htabs',
+        name: '菜单导航栏'
+      },
+      {
+        url: '/pages/function/vtabs/vtabs',
+        name: '目录导航栏'
+      },
     ]
   },
 

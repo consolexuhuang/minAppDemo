@@ -11,7 +11,10 @@
         "bluetooth/index",
         "test/index",
         "testNavTop/index",
-        "sticky/sticky"
+        "sticky/sticky",
+        "scrollList/scrollList",
+        "htabs/htabs",
+        "vtabs/vtabs"
       ]
     },
     {

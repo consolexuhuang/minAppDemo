@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ScrollList": "/component/scrollList/scrollList"
+  }
+}

@@ -1,0 +1,2 @@
+/* component/vtabs/vtabs.wxss */
+.assembly-tabs{width:100%}.assembly-tabs-bar__wrp{width:100%;background:#fff}.assembly-tabs-bar__content{width:100%;white-space:nowrap}.assembly-tabs-bar__item{display:inline-block}.assembly-tabs-bar__title{display:inline-block;border-bottom-width:2px;border-bottom-style:solid;border-bottom-color:transparent}

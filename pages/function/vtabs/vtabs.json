@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Vtab":"/component/vtabs/vtabs",
+    "Vtabs-content":"/component/vtabs-content/index"
+  }
+}

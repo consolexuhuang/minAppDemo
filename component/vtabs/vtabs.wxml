@@ -1,0 +1,39 @@
+<!--component/vtabs/vtabs.wxml-->
+<view class="assembly-vtabs">
+  <view class="assembly-vtabs-bar__wrp {{tabBarClass}}">
+    <scroll-view 
+      scroll-y
+      class="assembly-vtabs-bar__scrollview"
+      scroll-into-view="assembly-vtabs-item__{{currentView}}"
+    >
+      <view class="assembly-vtabs-bar__content">
+        <block wx:for="{{vtabs}}" wx:key="title">
+          <view 
+            id="assembly-vtabs-item__{{index}}"
+            class="assembly-vtabs-bar__item"
+            data-index="{{index}}"
+            style="background-color: {{activeTab === index ? tabActiveBgColor : tabInactiveBgColor}}; color: {{activeTab === index ? tabActiveTextColor : tabInactiveTextColor}}; border-left-color: {{activeTab === index ? tabLineColor : tabInactiveBgColor}}"
+            bindtap="handleTabClick"
+          >
+            <view class="assembly-vtabs-bar__title {{activeTab === index ? activeClass : ''}}">
+              <text class="">{{item.title}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="assembly-vtabs-content__wrp">
+    <scroll-view 
+      scroll-y
+      class="assembly-vtabs-content__scrollview" 
+      scroll-top="{{contentScrollTop}}"
+      scroll-with-animation="{{animation}}"
+      bindscroll="handleContentScroll"
+    >
+      <view class="assembly-vtabs-content">
+        <slot ></slot>
+      </view>
+    </scroll-view>
+  </view>
+</view>
