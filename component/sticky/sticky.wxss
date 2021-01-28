@@ -1,0 +1,3 @@
+/* component/sticky/sticky.wxss */
+.sticky_Assembly{position:relative}
+.sticky_Assembly_fixed{position:fixed;left:0;top:0}

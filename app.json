@@ -10,7 +10,8 @@
         "scale/index/index",
         "bluetooth/index",
         "test/index",
-        "testNavTop/index"
+        "testNavTop/index",
+        "sticky/sticky"
       ]
     },
     {

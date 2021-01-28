@@ -21,7 +21,33 @@ const sortList = (targetArr, key) => {
     return val2 - val1
   })
 }
+// 获取dom节点
+const getRect = (selector) => {
+  return new Promise(function (resolve, reject) {
+    wx.createSelectorQuery().select(selector).boundingClientRect(function (rect) {
+      if (rect) {
+        resolve(rect);
+      } else {
+        reject(new Error("can not find selector: " + selector));
+      }
+    }).exec();
+  });
+}
+const getAllRects = (selector) => {
+  return new Promise(function (resolve, reject) {
+    wx.createSelectorQuery().selectAll(selector).boundingClientRect(function (rect) {
+      if (rect) {
+        resolve(rect);
+      } else {
+        reject(new Error("can not find selector: " + selector));
+      }
+    }).exec();
+  });
+}
 module.exports = {
   formatTime: formatTime,
   sortList,
+  getRect,
+  getAllRects
+
 }

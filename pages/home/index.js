@@ -53,6 +53,10 @@ Page({
         url: '/pages/effect/drivingAnimate/index',
         name: '驱动动画'
       },
+      {
+        url: '/pages/function/sticky/sticky',
+        name: '吸顶组件'
+      },
     ]
   },
 

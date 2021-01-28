@@ -1,0 +1,33 @@
+<!--pages/function/sticky/sticky.wxml-->
+<view class="demo-block">
+  <view style="height: 200px"></view>
+  <view class="demo-title">基础用法</view>
+  <view class="demo-body">
+    <Sticky bindscroll="onScroll">
+      <button size="mini" type="primary" style="margin-left: 15px;">基础用法</button>
+    </Sticky>
+  </view>
+
+  <view class="demo-block">
+    <view class="demo-title">吸顶距离</view>
+    <view class="demo-body">
+      <Sticky offset-top="32">
+        <button size="mini" type="primary" style="margin-left: 115px; background-color: #1989fa">吸顶距离</button>
+      </Sticky>
+    </view>
+  </view>
+
+  <view class="demo-block">
+    <view class="demo-title">指定容器</view>
+    <view class="demo-body">
+      <view id="container" style="height: 250px; background-color: #E0E0E0;">
+        <view style="height: 100px; background-color: #FFFF99;"></view>
+        <Sticky container="{{container}}" offset-top="64">
+          <button size="mini" type="primary" style="margin-left: 215px; background-color: #ff976a">指定容器</button>
+        </Sticky>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view style="height: 2000px"></view>

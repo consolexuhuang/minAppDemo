@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Sticky": "/component/sticky/sticky"
+  }
+}

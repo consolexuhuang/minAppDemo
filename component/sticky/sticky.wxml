@@ -1,0 +1,8 @@
+<!--component/sticky/sticky.wxml-->
+<wxs src="./sticky.wxs" module="computed" />
+
+<view class="sticky_Assembly" style="{{computed.containerStyle({fixed, height, zIndex})}}">
+  <view class="{{fixed ? 'sticky_Assembly_fixed' : ''}}" style="{{computed.wrapStyle({fixed, offsetTop})}}">
+    <slot ></slot>
+  </view>
+</view>
