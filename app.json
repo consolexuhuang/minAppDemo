@@ -14,7 +14,8 @@
         "sticky/sticky",
         "scrollList/scrollList",
         "htabs/htabs",
-        "vtabs/vtabs"
+        "vtabs/vtabs",
+        "canvasToPic/canvasToPic"
       ]
     },
     {

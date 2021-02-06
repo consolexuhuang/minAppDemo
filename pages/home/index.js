@@ -69,6 +69,10 @@ Page({
         url: '/pages/function/vtabs/vtabs',
         name: '目录导航栏'
       },
+      {
+        url: '/pages/function/canvasToPic/canvasToPic',
+        name: 'canvas-图片'
+      }
     ]
   },
 
