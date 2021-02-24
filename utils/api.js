@@ -1,7 +1,7 @@
 import ajax from './request'
 export const getlist = params => {
   return ajax.request({
-    url:'store/getCityList',
+    url:'/merchant/app/merchant/getListNews',
     method:'post',
     data:params
   })

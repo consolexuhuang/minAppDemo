@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "列表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "list": "miniprogram-recycle-view/recycle-view",
+    "item": "miniprogram-recycle-view/recycle-item"
+  }
+}

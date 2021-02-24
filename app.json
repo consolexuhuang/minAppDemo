@@ -15,7 +15,8 @@
         "scrollList/scrollList",
         "htabs/htabs",
         "vtabs/vtabs",
-        "canvasToPic/canvasToPic"
+        "canvasToPic/canvasToPic",
+        "recycle/recycle"
       ]
     },
     {

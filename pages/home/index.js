@@ -72,6 +72,10 @@ Page({
       {
         url: '/pages/function/canvasToPic/canvasToPic',
         name: 'canvas-图片'
+      },
+      {
+        url: '/pages/function/recycle/recycle',
+        name: '长列表'
       }
     ]
   },

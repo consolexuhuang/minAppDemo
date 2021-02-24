@@ -614,8 +614,6 @@ class Draw {
       const _drawImage = (img) => {
         if (this.use2dCanvas) {
           const Image = canvas.createImage()
-          console.log(Image)
-
           Image.onload = () => {
             ctx.drawImage(Image, x, y, w, h)
             ctx.restore()

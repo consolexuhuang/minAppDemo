@@ -1,0 +1,15 @@
+<!--pages/function/recycle/recycle.wxml-->
+<list batch="{{batchSetRecycleData}}" id="recycleId">
+  <view slot="before">
+        <view>这里可以放个搜索条</view>
+    </view>
+  <item wx:for="{{recycleList}}" wx:key="id" class="item">
+      <view class="box">
+        <image src="{{item.src}}" class="img"></image>
+        <view>{{item.title}}</view>
+      </view>
+  </item>
+  <view slot="after" class="after">
+    <view>{{loadingText || '上拉加载'}}</view>
+  </view>
+</list>

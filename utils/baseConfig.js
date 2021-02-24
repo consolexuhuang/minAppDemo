@@ -1,5 +1,6 @@
 const base_config = {
-  API_URI: 'https://dev.jlife.vip/wx/api/',
+  // API_URI: 'https://dev.jlife.vip/wx/api/',
+  API_URI: 'https://m.api.aixiangdao.top/develop',
   defaultCont: {},
   type:{1:'黑卡',2:'鱼卡'},
   default_location: {
