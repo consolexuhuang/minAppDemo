@@ -1,12 +1,28 @@
 const base_config = {
-  // API_URI: 'https://dev.jlife.vip/wx/api/',
+  /**
+   * 服务端api
+   */
   API_URI: 'https://m.api.aixiangdao.top/develop',
-  defaultCont: {},
-  type:{1:'黑卡',2:'鱼卡'},
-  default_location: {
-    latitude: '31.24916171',
-    longitude: '121.487899486'
-  }
-  // 。。。。
+  // API_URI: 'http://www.gshop.com',
+
+  /**
+   * 请求来源
+   */
+  clientType : "wxapp",
+
+  /**
+   * 密钥
+   */
+  key: "hk3399255555kkdkskacloiuyrc7838fgh03",
+
+  /**
+   * 应用名
+   */
+  appname: "爱享到",
+
+  /**
+   * 应用当前版本
+   */
+  version : "1.0.0",
 }
 module.exports = base_config

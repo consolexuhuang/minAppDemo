@@ -1,0 +1,13 @@
+<!--pages/function/vtabs2/vtabs2.wxml-->
+<Vtab
+  vtabs="{{vtabs}}" 
+  activeTab="{{activeTab}}" 
+  bindtabclick="onTabCLick"
+  bindchange="onChange"
+>
+  <block wx:for="{{vtabs}}" wx:key="title" >
+    <Vtabs-content tabIndex="{{index}}">
+      <view class="vtabs-content-item">我是第{{index + 1}}项： {{item.title}}</view>
+    </Vtabs-content>
+  </block>
+</Vtab>

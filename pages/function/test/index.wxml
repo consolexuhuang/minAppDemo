@@ -1,4 +1,25 @@
 <!--pages/function/test/index.wxml-->
 <input bindinput='bindinput' style='background:#ccc'></input>
-<button open-type='getUserInfo' bindgetuserinfo = 'bindgetuserinfo' class='getUserInfoBtn'>登录</button>
-<button open-type='getUserInfo' open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber'>登录2</button>
+<button open-type='getUserInfo' bindgetuserinfo = 'bindgetuserinfo' class='getUserInfoBtn' style="position: relative; left: 0rpx; top: 488rpx" size="default" type="primary">登录</button>
+<button open-type='getUserInfo' open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber' style="position: relative; left: 0rpx; top: 287rpx">登录2</button>
+<button bindtap="getNewUserInfo" style="position: relative; left: 0rpx; top: 77rpx">新获取用户信息</button>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 194rpx; top: 660rpx; text-align: center; display: block; box-sizing: border-box">测试可视化</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 45rpx; top: 847rpx; text-align: center; display: block; box-sizing: border-box">测试可视化2</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 145rpx; top: 702rpx; text-align: center; display: block; box-sizing: border-box">测试可视化3</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 95rpx; top: 743rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 46rpx; top: 785rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 71rpx; top: 930rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 121rpx; top: 972rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 522rpx; top: 847rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 523rpx; top: 785rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 474rpx; top: 743rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 424rpx; top: 702rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 348rpx; top: 660rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 397rpx; top: 1013rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 276rpx; top: 702rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 498rpx; top: 930rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 244rpx; top: 1055rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 170rpx; top: 1013rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 448rpx; top: 972rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 348rpx; top: 1055rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>
+<view style="background: #f99; color: #eee; height: 84rpx; position: absolute; width: 100rpx; left: 294rpx; top: 1097rpx; text-align: center; display: block; box-sizing: border-box">测试可视化4</view>

@@ -16,12 +16,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // passIsLogin()
-    wx_loginIn().then(res => { 
-      console.log('res',res) 
-    },()=>{
-      // 属于新用户去强制授权登录
-    })
+    // // passIsLogin()
+    // wx_loginIn().then(res => { 
+    //   console.log('res',res) 
+    // },()=>{
+    //   // 属于新用户去强制授权登录
+    // })
     
   },
 
@@ -33,6 +33,18 @@ Page({
   getPhoneNumber(e){
     wx_loginIn('phone',e).then(res => { 
       console.log('res',res) 
+    })
+  },
+  getNewUserInfo(){
+    wx.getUserProfile({
+      desc:'测试新api',
+      lang:'zh_CN',
+      success(res){
+        console.log('success',res)
+      },
+      fail(res){
+        console.log('fail',res)
+      }
     })
   },
 

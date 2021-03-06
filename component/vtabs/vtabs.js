@@ -31,6 +31,7 @@ Component({
   relations: {
     '../vtabs-content/index': {
         type: 'child',
+        // 每次有custom-li被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
         linked: function linked(target) {
             var _this = this;
 
@@ -44,6 +45,7 @@ Component({
                 }, 100);
             });
         },
+        // 每次有custom-li被移除时执行，target是该节点实例对象，触发在该节点detached生命周期之后
         unlinked: function unlinked(target) {
             delete this.data._contentHeight[target.data.tabIndex];
         }
@@ -67,6 +69,7 @@ Component({
     scrollTabBar: function scrollTabBar(index) {
         var len = this.data.vtabs.length;
         if (len === 0) return;
+        // 防止一屏内的模块出现滚动，影响体验
         var currentView = index < 6 ? 0 : index - 5;
         if (currentView >= len) currentView = len - 1;
         this.setData({ currentView: currentView });
@@ -87,6 +90,7 @@ Component({
         var length = this.data.vtabs.length;
         var scrollTop = e.detail.scrollTop;
         var index = 0;
+        // 保证当前scrollTop区间值在第一模块和第二模块总高度之间
         if (scrollTop >= _heightRecords[0]) {
             for (var i = 1; i < length; i++) {
                 if (scrollTop >= _heightRecords[i - 1] && scrollTop < _heightRecords[i]) {

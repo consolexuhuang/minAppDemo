@@ -70,6 +70,10 @@ Page({
         name: '目录导航栏'
       },
       {
+        url: '/pages/function/vtabs2/vtabs2',
+        name: '详情目录导航栏'
+      },
+      {
         url: '/pages/function/canvasToPic/canvasToPic',
         name: 'canvas-图片'
       },

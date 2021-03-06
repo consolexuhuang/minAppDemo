@@ -16,7 +16,8 @@
         "htabs/htabs",
         "vtabs/vtabs",
         "canvasToPic/canvasToPic",
-        "recycle/recycle"
+        "recycle/recycle",
+        "vtabs2/vtabs2"
       ]
     },
     {
