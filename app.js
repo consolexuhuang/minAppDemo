@@ -1,6 +1,7 @@
 //app.js
 import base_config from './utils/baseConfig'
 import errorCode from './utils/error.js';
+import configure from './utils/configure.js'
 var { apiPath } = require('./utils/api.js');
 App({
   onLaunch: function () {
@@ -39,9 +40,9 @@ App({
 
     return new Promise( resolve => {
 
-      this.pushInitData(objPage);
-
-      this.wx_loginIn().then(() => {
+      // this.pushInitData(objPage);
+      // console.log(this.globalData)
+      this.wx_loginIn(objPage).then(() => {
         resolve()
       })
 
@@ -50,55 +51,23 @@ App({
   },
 
   // 普通微信登陆
-  wx_loginIn(){
+  wx_loginIn(objPage){
     let _this = this
     return new Promise((resolve, reject) => {
+      console.log(_this.globalData)
       if( JSON.stringify(_this.globalData.userInfo) == "{}" || _this.globalData.token == '' ){
         // 登录（用户信息授权）
         wx.login({
           success: res => {
             _this.globalData.code = res.code;
             //通过code码登录
-            _this.http("loginByCode", { code: res.code }, false).then(data => {
-              console.log(data)
-              if ((data != null) && data.token) {
-                _this.globalData.token = data.token;
-                _this.globalData.userInfo = data;
-    
-                // 获取用户信息
-                wx.getSetting({
-                  success: res => {
-                    if (res.authSetting['scope.userInfo']) {
-                      // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-                      wx.getUserInfo({
-                        success: res => {
-                          var params = { 
-                            code: _this.globalData.code,
-                            encryptedData: res.encryptedData,
-                            iv: res.iv,
-                            signature: res.signature,
-                            rawData: res.rawData
-                          }
-                          
-                          //更新用户信息
-                          _this.http("updateUserInfo", params, function (user) {
-                            _this.globalData.userInfo = user;
-                            resolve()
-                          }, false);
-                        },
-                        fail: res_fail => {
-                          //  非强制授权
-                          resolve()
-                        }
-                      })
-                    }
-                  }
-                })
-              } else {
-                // funName();
-              }
-            }, () => {
-              wx.showToast({ title: '登录失败' ,icon:'none'})
+            _this.http("loginByWeChatCode", { code: res.code }, false).then(data => {
+              // console.log(data)
+              _this.globalData.token = data.userToken;
+              _this.setUserInfo(data.userInfo);
+              _this.pushInitData(objPage);
+              // _this.pushUserTag()
+              resolve()
             });
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
           }
@@ -107,6 +76,34 @@ App({
         // 老用户无须登录
         resolve()
       }
+    })
+  },
+
+  /********重新更新用户信息************** */
+  resetUserInfo(){
+    let _this = this
+    return new Promise((resolve, reject) => {
+      if ( this.isLoginToMethod() ) return;
+
+      this.http("getUserInfo", { }).then((data) => {
+        console.log(data)
+        _this.setUserInfo(data).then((newUserInfo) => {
+          resolve(newUserInfo)
+        });
+
+      });
+    })    
+  },
+  /**
+   *对用户信息统一处理方法
+   */
+  setUserInfo(value){
+    return new Promise((resolve) => {
+      // 处理...
+      // console.log(value)
+      this.globalData.userInfo = value;
+      
+      resolve(this.globalData.userInfo)
     })
   },
 
@@ -121,6 +118,22 @@ App({
       token: _this.globalData.token,
     });
   },
+  /**
+   * 检验当前操作是否需要登录
+   */
+  isLoginToMethod(){
+    // console.log(this.globalData.token)
+    if(this.globalData.token) return false
+    else return true
+  },
+  /**
+   * 检验当前用户信息是否需要获取
+   */
+  isGetUserInfoMethod(){
+    // console.log(this.globalData.userInfo)
+    if(this.globalData.userInfo.headPicture && this.globalData.userInfo.headPicture == "http://axd-dev-upload.oss-cn-shenzhen.aliyuncs.com/TOUXIANG%403x.png") return true
+      else return false
+  },
 
   globalData: {
     //用户的token
@@ -131,6 +144,7 @@ App({
     systeminfo: false,   //系统信息
     headerBtnPosi: false,  //头部菜单高度
   },
+  configure: configure,
   /**------------------------------------------------------------------------------
    * -------------------------下面是公共的事件方法-----------------------------------
    --------------------------------------------------------------------------------*/
@@ -151,7 +165,6 @@ App({
     
       // 提取api地址
       let urlConfig = apiPath[apiname];
-      
       // 跳过登录
       if ((urlConfig[2] == 'login') && ((_this.globalData.token == "") || (JSON.stringify(_this.globalData.userInfo) == "{}"))) {
         wx.showToast({ title: '请登录后操作' ,icon:'none'}); return false;
@@ -166,13 +179,13 @@ App({
       if (urlConfig[3] == "server") {
         //异业联盟后端的调用
         let {key, version, clientType, API_URI} = base_config
-        let paramsComp = { key, version, clientType }
+        let paramsComp = {  }
         // wx原生request
         wx.request({
           url: API_URI + urlConfig[0],
           data: Object.assign(params, paramsComp) ,
           header: {
-            "content-type": 'application/x-www-form-urlencoded',
+            "content-type": 'application/json',
             "userToken": _this.globalData.token || '',
           },
           method: urlConfig[1],
@@ -184,20 +197,23 @@ App({
             let status_code = res.data.httpCode ? res.data.httpCode : res.statusCode
             let error_code = res.data.errorCode ? res.data.errorCode : ''
             let error_msg = ''
-
-            if (res.data.retData) { resolve(res.data.retData); }
-
-            else { 
-              
+            if(apiname == 'getUserInfo'){
+              resolve(res.data)
+            } else if (apiname == 'loginByWeChatCode'){
+              resolve(res.data.data.data)
+            } else  if (status_code == "200") { 
+              resolve(res.data.data)
+            
+            }else {
               if( errorCode[error_code] ) {
                 error_msg = errorCode[error_code]
                 wx.showToast({ title: error_msg }) 
               }
 
               reject(res)
-              
             }
-
+            
+          
           }, 
           fail: (res) => {
             // 关闭loading

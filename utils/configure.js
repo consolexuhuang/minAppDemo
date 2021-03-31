@@ -11,35 +11,40 @@ const getLocation = () => {
       },
       fail(err) {
         //默认值
-        let location = getApp().base_config.base_config
+        // let location = getApp().base_config.base_config
         reject(err);
       }
     })
   });
 }
 //获取用户信息
-const getUserInfo = () => {
+const getUserProfile = () => {
   return new Promise((resolve, reject) => {
-      wx.getUserInfo({
-        lang: 'zh_CN',
-        success(res_userInfo) {
-          // 处理用户信息数据...
-          let userInfo = {
-            nickName: res_userInfo.userInfo.nickName || '',
-            headImg: res_userInfo.userInfo.avatarUrl || '',
-            city: res_userInfo.userInfo.city || '',
-            gender: res_userInfo.userInfo.gender || '',
-            encryptedData: res_userInfo.encryptedData || '',
-            iv: res_userInfo.iv || '',
-            rawData: res_userInfo.rawData || '',
-            signature: res_userInfo.signature || '',
-          }
-          resolve(userInfo)
-        },
-        fail() {
-          reject('拒绝授权')
-        },
-      })
+    // 查看是否授权
+    wx.getSetting({
+      success: function (res) {
+        if (true) {
+          // 已经授权，可以直接调用 wx.getUserProfile 获取头像昵称 
+          // wx.getSetting接口请求用户的授权状态，会直接读取到scope.userInfo为true
+          wx.getUserProfile({
+            lang: 'zh_CN',
+            desc: '用于完善会员资料',
+            success: function (res) {
+              resolve(res.userInfo)
+            },
+            fail(){
+              reject('您已拒绝授权！')
+            }
+          })
+        } else {
+          //  reject('授权失败！')
+           wx.showToast({ title: "授权失败！", icon: 'none', duration: 2000 });
+        }
+      }, 
+      fail: function () {
+        wx.showToast({ title: "授权失败，请重试", icon: 'none', duration: 2000 });
+      }
+    })
   })
 }
 //获取用户电话加密信息
@@ -67,13 +72,13 @@ const getCode = () => {
         },
         fail: () => {
           // console.error('登录失败！')
-          reject('登录失败！')
+          reject('code登录失败！')
         }
       })
   })
 }
 /**
- * 组合登录方法
+ * 组合登录方法 延伸版
  * @param {*} type （Strig）
  * location : 定位登录
  * userinfo ： 用户信息登录
@@ -126,6 +131,6 @@ const passIsLogin = () => {
 
 module.exports = {
   getLocation,
-  getUserInfo,
+  getUserProfile,
   wx_loginIn
 }

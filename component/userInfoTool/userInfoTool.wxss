@@ -1,0 +1,23 @@
+/* component/userInfoTool/userInfoTool.wxss */
+.block_content{
+  background: #fff;
+  border-radius: 10rpx;
+  width: 540rpx;
+}
+.block_content .tool_default_content{
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 55rpx;
+  padding: 55rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.block_content .tool_closetext{
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 98rpx;
+  font-weight: 500;
+  color: #FE7321;
+  letter-spacing:2rpx;
+  position: relative;
+}

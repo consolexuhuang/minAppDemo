@@ -1,0 +1,15 @@
+<!--component/userInfoTool/userInfoTool.wxml-->
+<view wx:if='{{!isAutoShowTool}}' bindtap="_preUserInfoMethod" >
+  <slot />
+</view>
+<van-popup show="{{ show }}" bind:close="_onClose">
+  <view class="block_content"> 
+    <view class='tool_default_content'>
+      <view>我们需要获取您的昵称、头像信息</view>
+      <view>提供更精准的推荐服务</view>
+    </view>
+    <view class='tool_closetext' bindtap="_getUserProfileToLogin">
+       点击授权
+    </view>
+  </view>
+</van-popup>

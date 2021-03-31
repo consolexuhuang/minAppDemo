@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "userInfoTool":"/component/userInfoTool/userInfoTool"
+  }
 }

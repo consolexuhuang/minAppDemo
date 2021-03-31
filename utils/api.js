@@ -6,9 +6,13 @@ var apiPath = {
   //手机号授权登陆
   loginByPhoneNo: ['/auth/wephone/login',                                     "POST", "common","server"],
   //获取用户信息
-  getUserInfo: ['/cbase/getUser',"POST", "common","server"],
+  getUserInfo: ['/user/app/user/info',"POST", "common","server"],
+  //利用code登录接口
+  loginByWeChatCode:            ['/auth/wecode/login',                                      "POST", "common","server"],
   //首次更新用户信息
   updateUserInfo: ['/cbase/updateUser',"POST", "common","server"],
+  //以后更新用户信息
+  updateUserInfoTwo:            ['/user/app/updateUserInfo',                                "POST", "login","server"],
   //获取商品详情的代金券列表
   getProducts:                  ['/merchant/app/product/list',                              "POST", "common","server"],
   //获取城市的分类列表

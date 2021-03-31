@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // userInfoToolState:false
   },
   bindinput(e){
     console.log('bindinput',e)
@@ -16,6 +16,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    getApp().initFun(this).then(() => {
+      this.setData({state:true})
+    })
+    
     // // passIsLogin()
     // wx_loginIn().then(res => { 
     //   console.log('res',res) 
@@ -24,29 +28,35 @@ Page({
     // })
     
   },
+  userInfoToolEvent(){
+    console.log('userInfoToolEvent用户组件回调')
+  },
+  // getUserInfo(){
+  //   this.setData({userInfoToolState:true})
+  // },
 
-  bindgetuserinfo(){
-    wx_loginIn('userinfo').then(res => { 
-      console.log('res',res) 
-    })
-  },
-  getPhoneNumber(e){
-    wx_loginIn('phone',e).then(res => { 
-      console.log('res',res) 
-    })
-  },
-  getNewUserInfo(){
-    wx.getUserProfile({
-      desc:'测试新api',
-      lang:'zh_CN',
-      success(res){
-        console.log('success',res)
-      },
-      fail(res){
-        console.log('fail',res)
-      }
-    })
-  },
+  // bindgetuserinfo(){
+  //   wx_loginIn('userinfo').then(res => { 
+  //     console.log('res',res) 
+  //   })
+  // },
+  // getPhoneNumber(e){
+  //   wx_loginIn('phone',e).then(res => { 
+  //     console.log('res',res) 
+  //   })
+  // },
+  // getNewUserInfo(){
+  //   wx.getUserProfile({
+  //     desc:'测试新api',
+  //     lang:'zh_CN',
+  //     success(res){
+  //       console.log('success',res)
+  //     },
+  //     fail(res){
+  //       console.log('fail',res)
+  //     }
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
